@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchTrending } from "../../api/movieApi";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import HeroBanner from "../../components/HeroBanner/HeroBanner"; // 👈 Import your existing component
-import "./trending.css";
+import "./Trending.css";
 
 const Trending = () => {
   const [trending, setTrending] = useState([]);
