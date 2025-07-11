@@ -1,0 +1,20 @@
+.trending-page {
+  padding-bottom: 2rem;
+}
+
+.trending-section {
+  padding: 2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}

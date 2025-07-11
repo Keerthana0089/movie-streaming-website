@@ -1,0 +1,148 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--card-bg);
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar__logo-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar__logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: white;
+  padding: 2px;
+}
+
+.user-info-popup {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 180px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.navbar__logo-wrapper:hover .user-info-popup {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.navbar__menu {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  gap: 2rem;
+}
+
+.nav-item,
+.logout-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-icon {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.nav-item.active,
+.nav-item:hover,
+.logout-item:hover {
+  color: var(--accent);
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 2rem; 
+}
+
+
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  color: var(--accent);
+}
+
+.logout-hover {
+  color: #ff5e5e;
+  margin-top: 6px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.logout-hover:hover {
+  color: #ff0000;
+}
+.user-info-popup {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 180px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transform: translateY(0);
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.logout-hover {
+  color: #ff5e5e;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: color 0.3s;
+}
+
+.logout-hover:hover {
+  color: #ff0000;
+}
+.logout-item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.logout-item:hover {
+  color: var(--accent);
+}

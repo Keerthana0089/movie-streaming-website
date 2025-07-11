@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+/* Overall container */
+.movie-details {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+/* === Backdrop Slider (react-slick carousel) === */
+.backdrop-carousel {
+  margin-bottom: -80px; /* pull up details */
+}
+
+.backdrop-slide {
+  width: 100%;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 10px;
+  transition: background-image 1s ease-in-out;
+  overflow: hidden;
+}
+
+.backdrop-slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 10%, rgba(0, 0, 0, 0.2) 20%, transparent);
+  z-index: 1;
+}
+
+/* Slick arrows */
+.slick-prev,
+.slick-next {
+  z-index: 2;
+  font-size: 2.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Slick dots */
+.slick-dots li button:before {
+  color: white;
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--accent);
+}
+
+/* === Movie Info Section === */
+.details-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  margin-top: -100px;
+  z-index: 1;
+  position: relative;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.poster {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.text-section {
+  flex: 1;
+  color: var(--text-color);
+}
+
+.text-section h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4),
+               0 0 20px rgba(19, 17, 17, 0.4); /* Netflix red glow */
+}
+
+
+.tagline {
+  font-style: italic;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.text-section p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Favorite Button */
+.fav-btn {
+  margin-top: 1.5rem;
+  background-color: #e50914;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease, transform 0.2s ease;
+}
+
+.fav-btn:hover {
+  background-color: #b00610;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.6);
+}
+
+.fav-btn.favorited {
+  background-color: #444;
+  color: #e50914;
+}
+
+/* === Recommendations === */
+.recommend-section {
+  margin: 3rem 2rem;
+}
+
+.recommend-section h2 {
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.recommend-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recommend-card {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0; /* initial state */
+}
